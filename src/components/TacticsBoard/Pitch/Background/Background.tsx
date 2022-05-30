@@ -7,7 +7,6 @@ import PlayerContainer from "../../PlayerContainer/PlayerContainer";
 const Background: React.FC<PitchProps> = ({ firstEleven, onDropPlayer }) => {
   return (
     <div className={classes.container}>
-      dddd
       <div className={classes.background}>
         {firstEleven.map((player: Player, index: any) => (
           <PlayerContainer
@@ -30,7 +29,6 @@ const Background: React.FC<PitchProps> = ({ firstEleven, onDropPlayer }) => {
             </>
           </PlayerContainer>
         ))}
-
         <div className={classes.pitchDesign}>
           <div className={classes.homeBox}>
             <div className={classes.goal} />

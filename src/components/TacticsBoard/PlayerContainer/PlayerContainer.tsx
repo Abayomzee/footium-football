@@ -5,7 +5,7 @@ import classes from "./PlayerContainer.module.css";
 const PlayerContainer: React.FC<PlayerContainerProps> = (props) => {
   const { children, index, onDropPlayer, positionType } = props;
 
-  const [{ isOver }, dropRef] = useDrop({
+  const [, dropRef] = useDrop({
     accept: ["sub", "start"],
     drop: (item: MovedPlayer, monitor) => {
       const dropResult = monitor.canDrop();
@@ -14,7 +14,6 @@ const PlayerContainer: React.FC<PlayerContainerProps> = (props) => {
         onDropPlayer(item, index, positionType);
       }
     },
-
     collect: (monitor) => ({
       isOver: !!monitor.isOver(),
     }),
