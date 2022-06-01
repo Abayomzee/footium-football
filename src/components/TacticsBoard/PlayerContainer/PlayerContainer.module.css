@@ -2,4 +2,5 @@
   --coo: rgb(40, 110, 40);
   border-left: 1px solid var(--coo);
   border-top: 1px solid var(--coo);
+  z-index: 3;
 }

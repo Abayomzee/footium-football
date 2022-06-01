@@ -22,12 +22,6 @@
   background-color: var(--green-2);
 }
 
-.dd {
-  --coo: rgb(40, 110, 40);
-  border-left: 1px solid var(--coo);
-  border-top: 1px solid var(--coo);
-}
-
 .pitchDesign {
   position: absolute;
   top: 0;

@@ -17,7 +17,7 @@ const PlayerCard: React.FC<PlayerCardProps> = (props) => {
       const dropResult = monitor.getDropResult();
 
       if (item && dropResult) {
-        onDropPlayer(item);
+        onDropPlayer(item, index);
       }
     },
     collect: (monitor) => ({

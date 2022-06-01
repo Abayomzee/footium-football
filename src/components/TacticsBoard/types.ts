@@ -26,6 +26,6 @@ export interface PlayerContainerProps {
 export interface PlayerCardProps {
   player: Player;
   playerType: TeamType;
-  onDropPlayer: (player: MovedPlayer) => void;
+  onDropPlayer: (player: MovedPlayer, index: any) => void;
   index?: any;
 }

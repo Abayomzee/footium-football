@@ -18,6 +18,7 @@ const Background: React.FC<PitchProps> = ({ firstEleven, onDropPlayer }) => {
             <>
               {player ? (
                 <PlayerCard
+                  key={player.id}
                   player={player}
                   playerType="start"
                   index={index}
