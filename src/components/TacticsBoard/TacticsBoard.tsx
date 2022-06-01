@@ -6,6 +6,7 @@ import classes from "./TacticsBoard.module.css";
 import { setFirstElevenPlayers } from "../../utility/helper";
 import { MovedPlayer, TeamType } from "./types";
 import PlayerContainer from "./PlayerContainer/PlayerContainer";
+import Notiflix from "notiflix";
 
 const TacticsBoard: React.FC = () => {
   // States
@@ -33,13 +34,19 @@ const TacticsBoard: React.FC = () => {
     const firstTeam = [...firstEleven];
     const subTeam = [...sub];
 
-    // Add to starting eleven
     if (player.type === "sub" && positionType === "start") {
+      // Add to starting eleven
       const playerToSubOut = firstTeam[index];
       const playerToSubIn = subTeam[player.index];
 
       firstTeam.splice(index, 1, playerToSubIn);
       subTeam.splice(player.index, 1, playerToSubOut);
+
+      if (!playerToSubOut) {
+        Notiflix.Notify.init({ position: "right-top" });
+        Notiflix.Notify.failure("Players cannot be more than 11 on the pitch");
+        return;
+      }
 
       setFirstEleven(firstTeam);
       setSub(subTeam);

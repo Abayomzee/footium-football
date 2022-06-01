@@ -49,3 +49,9 @@ export const setFirstElevenPlayers = (): object[] => {
 
   return firstEleven;
 };
+
+
+export const checkFirstTeamLength = (firstTeam: any) => {
+  const playersLength = firstTeam.filter(Boolean);
+  return playersLength;
+};
